@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "CleanCapture",
   "version": "1.0",
-  "description": "Capture, edit and save a page as PDF with undo and keyboard controls.",
+  "description": "Capture, interactively edit and print (or save as PDF) webpages with undo, reset, and keyboard controls.",
   "action": {
     "default_title": "CleanCapture"
   },

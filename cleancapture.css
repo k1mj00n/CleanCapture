@@ -4,7 +4,7 @@ body {
   padding: 0;
 }
 
-/* Remove margins and padding by default from key containers */
+/* Remove margins and padding from key containers */
 #contentContainer,
 #HeaderNavigationContainer,
 #ModuleHeaderContainer {
@@ -12,7 +12,7 @@ body {
   padding: 0;
 }
 
-/* Button container for Save and Undo */
+/* Button container for Save, Undo, Reset */
 #buttonContainer {
   position: fixed;
   top: 10px;
@@ -27,11 +27,11 @@ body {
   font-size: 14px;
 }
 
-/* Shortcut info icon and popup */
+/* Shortcut icon and popup */
 #shortcutInfo {
   position: fixed;
   top: 10px;
-  left: 10px; /* Change to right:10px if desired */
+  left: 10px; /* Change to right:10px if preferred */
   z-index: 1000;
 }
 
@@ -60,15 +60,10 @@ body {
   display: block;
 }
 
-/* Content container with no margins/padding by default */
+/* Content container styling */
 #contentContainer {
   margin-top: 0;
   padding: 0;
-}
-
-/* Control panel styling (for element editing) */
-#controlPanel {
-  /* These styles are applied dynamically via JS but you can include defaults here */
 }
 
 /* --- Print Styles --- */
@@ -79,7 +74,6 @@ body {
   #controlPanel {
     display: none !important;
   }
-  
   /* Hide duplicate HeaderNavigationContainer elements except the first */
   #contentContainer #HeaderNavigationContainer:not(:first-of-type) {
     display: none !important;
@@ -87,7 +81,6 @@ body {
   #contentContainer #HeaderNavigationContainer:first-of-type {
     page-break-after: always;
   }
-  
   /* Hide duplicate ModuleHeaderContainer elements except the first */
   #contentContainer #ModuleHeaderContainer:not(:first-of-type) {
     display: none !important;
@@ -95,13 +88,10 @@ body {
   #contentContainer #ModuleHeaderContainer:first-of-type {
     page-break-after: always;
   }
-  
-  /* Set page margins */
+  /* Set page margins for printing */
   @page {
     margin: 20mm;
   }
-  
-  /* Optionally adjust content container for printing */
   #contentContainer {
     margin-top: 0;
     padding: 0;

@@ -1,5 +1,5 @@
 chrome.action.onClicked.addListener((tab) => {
-  // Inject a script that returns the body HTML, current URL and CSS links.
+  // Inject a script to capture the current page’s body content, current URL, and stylesheet links.
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
     function: getPageContent
@@ -9,7 +9,6 @@ chrome.action.onClicked.addListener((tab) => {
       return;
     }
     const pageContent = results[0].result;
-    // Save captured body HTML, base URL and CSS links into storage.
     chrome.storage.local.set({
       capturedContent: pageContent.html,
       capturedBase: pageContent.base,

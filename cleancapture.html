@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <title>CleanCapture</title>
     <link rel="stylesheet" type="text/css" href="cleancapture.css">
-    <!-- Including external CSS from the original site -->
+    <!-- These external stylesheets are included so the captured page appears as close as possible to the original -->
     <link type="text/css" rel="stylesheet" href="https://www.ncsf.org/e-learning/courses/media/css/pc.css">
     <link type="text/css" rel="stylesheet" href="https://www.ncsf.org/e-learning/courses/media/css/forms.css">
   </head>
   <body>
     <div id="buttonContainer">
-      <button id="savePdf">Save as PDF</button>
-      <button id="undoAction">Undo</button>
+      <button id="savePdf" aria-label="Save as PDF">Save as PDF</button>
+      <button id="undoAction" aria-label="Undo last action">Undo</button>
+      <button id="resetAction" aria-label="Reset layout to original">Reset</button>
     </div>
     <!-- Shortcut info icon and popup -->
     <div id="shortcutInfo">
-      <span id="shortcutIcon">?</span>
+      <span id="shortcutIcon" aria-label="Keyboard shortcuts info" tabindex="0">?</span>
       <div id="shortcutPopup">
         <strong>Keyboard Shortcuts:</strong>
         <ul>

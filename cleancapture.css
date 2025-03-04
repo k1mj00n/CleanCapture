@@ -1,0 +1,109 @@
+/* Reset default margins and padding */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove margins and padding by default from key containers */
+#contentContainer,
+#HeaderNavigationContainer,
+#ModuleHeaderContainer {
+  margin: 0;
+  padding: 0;
+}
+
+/* Button container for Save and Undo */
+#buttonContainer {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  gap: 5px;
+}
+
+#buttonContainer button {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+/* Shortcut info icon and popup */
+#shortcutInfo {
+  position: fixed;
+  top: 10px;
+  left: 10px; /* Change to right:10px if desired */
+  z-index: 1000;
+}
+
+#shortcutIcon {
+  font-size: 18px;
+  background-color: #ccc;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: default;
+}
+
+#shortcutPopup {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 12px;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+#shortcutInfo:hover #shortcutPopup {
+  display: block;
+}
+
+/* Content container with no margins/padding by default */
+#contentContainer {
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Control panel styling (for element editing) */
+#controlPanel {
+  /* These styles are applied dynamically via JS but you can include defaults here */
+}
+
+/* --- Print Styles --- */
+@media print {
+  /* Hide UI controls when printing */
+  #buttonContainer,
+  #shortcutInfo,
+  #controlPanel {
+    display: none !important;
+  }
+  
+  /* Hide duplicate HeaderNavigationContainer elements except the first */
+  #contentContainer #HeaderNavigationContainer:not(:first-of-type) {
+    display: none !important;
+  }
+  #contentContainer #HeaderNavigationContainer:first-of-type {
+    page-break-after: always;
+  }
+  
+  /* Hide duplicate ModuleHeaderContainer elements except the first */
+  #contentContainer #ModuleHeaderContainer:not(:first-of-type) {
+    display: none !important;
+  }
+  #contentContainer #ModuleHeaderContainer:first-of-type {
+    page-break-after: always;
+  }
+  
+  /* Set page margins */
+  @page {
+    margin: 20mm;
+  }
+  
+  /* Optionally adjust content container for printing */
+  #contentContainer {
+    margin-top: 0;
+    padding: 0;
+  }
+}
